@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  proxy:
+    build: proxy/.
+    platform: linux/amd64
+    command: /apps/squid/sbin/squid -NsY -d1 -f /etc/squid/squid.conf &
+    ports:
+      - "3128:3128"
+    volumes:
+      - $PWD/proxy/squid.conf:/etc/squid/squid.conf:rw
+      - $PWD/proxy/certs:/tmp/certs:rw
+    restart: unless-stopped
+  app:
+    build: app/.
+    platform: linux/amd64
+    depends_on:
+      - proxy
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/proxy/certs/tls-ca-chain.pem:/tmp/certs/tls-ca-chain.pem
+    environment:
+      NEW_RELIC_APP_NAME: "SQUID-TLS1.0-BUMP"
+      NEW_RELIC_LICENSE_KEY: ""
+      NEW_RELIC_PROXY_HOST: "proxy"
+      NEW_RELIC_PROXY_PORT: 3128
+      NEW_RELIC_CA_BUNDLE_PATH: /tmp/certs/tls-ca-chain.pem
+      #NEW_RELIC_LOG_LEVEL: "debug"
