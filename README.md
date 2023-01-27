@@ -20,11 +20,11 @@ This project demonstrates how you can use a  proxy such as Squid to upgrade TLS 
 
 Usually a proxy will not intercept TLS encrypted traffic, rather it will provide a tunnel through which the client and server commmunicaiton travel.
 
-It is possible, however, to configure the proxy to intercept the traffic: the request from the client is terminated within the proxy and a new connection is established to the server. This example uses the Squid ssl_bump feature to do just this. It allows the proxy to receive TLS1.0/1.1 traffic on one side of the proxy but use TLS1.2+ on the other side.
+It is possible, however, to configure the proxy to intercept the traffic: the request from the client is terminated within the proxy and a new connection is established to the server. This example uses the Squid **ssl_bump** feature to do just this. It allows the proxy to receive TLS1.0/1.1 traffic on one side of the proxy but use TLS1.2+ on the other side.
 
 ![Proxy Diagram](proxy-diagram.png)
 
-It should be noted that intercepting TLS traffic has security and legal concerns and should only be used where necessary.
+It should be noted that intercepting TLS traffic has security and legal concerns and should only be used where necessary.  Furthermore, note that the proxy must present a TLS certificate to the client (legacy system) that is trusted by that system.  As documented in the diagram, the certificate can be [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate), but it must be trusted by the client for it to estblish a TLS session between the client and the proxy.
 
 ## Anatomy of example code
 
