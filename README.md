@@ -24,7 +24,7 @@ It is possible, however, to configure the proxy to intercept the traffic: the re
 
 ![Proxy Diagram](proxy-diagram.png)
 
-It should be noted that intercepting TLS traffic has security and legal concerns and should only be used where necessary.  Furthermore, note that the proxy must present a TLS certificate to the client (legacy system) that is trusted by that system.  As documented in the diagram, the certificate can be [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate), but it must be trusted by the client for it to estblish a TLS session between the client and the proxy.
+It should be noted that intercepting TLS traffic has security and legal concerns and should only be used where necessary.  Furthermore, note that the proxy must present a TLS certificate to the client (legacy system) that is trusted by that system.  As documented in the diagram, the certificate can be [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate), but it must be trusted by the client for it to establish a TLS session between the client and the proxy.
 
 ## Anatomy of example code
 
