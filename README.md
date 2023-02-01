@@ -76,6 +76,10 @@ The Squid proxy must be trusted by the agent in order to establish a TLS connect
 
 In order for Squid running on Debian 11 to accept < TLSv1.2 connections the OpenSSL configuration has to be configured to allow it. This is configured by setting the `MinProtocol` to "TLSv1.0" in [openssl.cnf](proxy/openssl.cnf). This is the only change to the default OpenSSL configuration file.
 
+## Windows
+
+If your legacy system is a Windows based server, please see [this guide](https://github.com/newrelic-experimental/tls-proxy.git) if you're experiencing issues with the certificate setup
+
 ## Contributing
 
 We encourage your contributions to improve [TLS Proxy](../../)! Keep in mind when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. You only have to sign the CLA one time per project. If you have any questions, or to execute our corporate CLA, required if your contribution is on behalf of a company, please drop us an email at opensource@newrelic.com.
