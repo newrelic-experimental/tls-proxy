@@ -78,7 +78,7 @@ In order for Squid running on Debian 11 to accept < TLSv1.2 connections the Open
 
 ## Windows
 
-If your legacy system is a Windows based server, please see [this guide](https://github.com/newrelic-experimental/tls-proxy.git) if you're experiencing issues with the certificate setup
+If your legacy system is a Windows based server, please see [this guide](https://docs.google.com/document/d/1-Ym6PW_kkbelL6d_0Et6JjPzXH5CAmor73CtPL_1ydk) if you're experiencing issues with the certificate setup
 
 ## Contributing
 
