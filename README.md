@@ -36,7 +36,7 @@ This example code uses Docker to stand up two containers:
 
 ## Testing the code
 
-To run the example you must add your New Relic license key to the [docker-compose.yaml](docker-compose.yaml) file.
+To run the example you must add your New Relic INGEST license key to the [docker-compose.yaml](docker-compose.yaml) file.
 
 ### Confirming TLS1.0 Traffic
 
