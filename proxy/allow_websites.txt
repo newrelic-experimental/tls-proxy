@@ -1,1 +1,2 @@
 .newrelic.com
+.nr-data.net
